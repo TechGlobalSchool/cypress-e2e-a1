@@ -1,9 +1,9 @@
 /// <reference types="cypress"/>
 
 describe("Cypress Selectors", () => {
-  beforeEach(() => {
-    cy.visit("https://www.techglobal-training.com/frontend");
-  });
+  // beforeEach(() => {
+  //   cy.visit("https://www.techglobal-training.com/frontend");
+  // });
 
   it("Practice Web Elements using - get() and contains()", () => {
     cy.get(".CardGrids_CardGrids__qDdyI").as("allCards");

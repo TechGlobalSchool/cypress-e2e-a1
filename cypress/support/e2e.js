@@ -15,3 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+
+beforeEach(() => {
+  cy.visit("https://www.techglobal-training.com/frontend");
+});
