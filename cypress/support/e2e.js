@@ -19,6 +19,7 @@ import "cypress-real-events";
 import '@4tw/cypress-drag-drop'
 
 
+
 beforeEach(() => {
   cy.visit("https://www.techglobal-training.com/frontend");
 });
