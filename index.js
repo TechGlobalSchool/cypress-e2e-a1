@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 
 function getNextWeekDate() {
   const today = new Date()
@@ -15,5 +15,12 @@ console.log(getNextWeekDate())
 // October 02, 2025
 // DD/MM/YYYY
 
+// process.env.TECHGLOBAL_URL = 'techglobal'
+// const url = process.env.TECHGLOBAL_URL 
 
-date-fns
+// console.log(process.env.TECHGLOBAL_URL)
+
+// process.env.API_ENDPOINT = 'https://api.techglobal-training.com/students'
+
+console.log(process.env.API_ENDPOINT + ' TechGlobal API Endpoint')
+

@@ -31,5 +31,7 @@ describe("File Download & File Upload", () => {
 
     cy.get('#file_submit').realClick()
     cy.get('#result').should('have.text', `You uploaded ${fileName}`)
+
+    cy.log(Cypress.env('UI_URL'))
   });
 });

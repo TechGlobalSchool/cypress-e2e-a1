@@ -34,5 +34,16 @@ describe('Custom Commands', () => {
 
     cy.get('#main_heading').assertAttribute('id')
     cy.get('#main_heading').assertAttribute('id', 'main_heading')
+
+
+    // Action that clicks on the button that triggers UI modal
+    // cy.get('modalButton').click()
+    // cy.get('#modal').should('be.visible')
+
+    // cy.get('#firstName').type('TechGlobal')
+
+
+    // cy.log(Cypress.env('UI_URL', 'https://qa.techglobal-training.com'))
+    cy.log(Cypress.env('UI_URL'))
   })
 })
