@@ -15,3 +15,8 @@ jobs:
           # headed: false
           # spec: cypress/e2e/spec1.cy.js
           command: npm run test:smoke
+      
+      - name: Cypress run Regression
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm t
