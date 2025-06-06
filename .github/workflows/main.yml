@@ -16,7 +16,19 @@ jobs:
           # spec: cypress/e2e/spec1.cy.js
           command: npm run test:smoke
       
-      - name: Cypress run Regression
-        uses: cypress-io/github-action@v6
+      # - name: Cypress run Regression
+      #   uses: cypress-io/github-action@v6
+      #   with:
+      #     command: npm t
+
+      - name: Artifacts
+        uses: actions/upload-artifact@v4
+        # add the line below to store reports on failure
+        # if: always()
+        # if: failure()
         with:
-          command: npm t
+          name: Cypress Reports
+          path: cypress/reports/html/index.html
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+
+
