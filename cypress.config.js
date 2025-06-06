@@ -7,6 +7,14 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   // defaultCommandTimeout: 5000,
   // retries: 2,
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'custom-title',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
   env: {
     UI_URL: process.env.UI_URL,
 
@@ -18,6 +26,10 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on);
+      require('@cypress/grep/src/plugin')(config);
+      return config;
     },
+    video: true
   },
 });

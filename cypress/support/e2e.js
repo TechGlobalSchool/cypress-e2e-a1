@@ -17,6 +17,9 @@
 import './commands'
 import "cypress-real-events";
 import '@4tw/cypress-drag-drop'
+import 'cypress-mochawesome-reporter/register';
+const registerCypressGrep = require('@cypress/grep')
+registerCypressGrep()
 
 
 
