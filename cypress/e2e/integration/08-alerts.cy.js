@@ -1,36 +1,36 @@
-describe("Handling Alerts", () => {
+describe('Handling Alerts', () => {
   beforeEach(() => {
-    cy.clickCard("Alerts");
-  });
+    cy.clickCard('Alerts')
+  })
 
-  it("Handling the Warning Alert", () => {
-    cy.on("window:alert", (str) => {
-      console.log(`My warning alert text content is: ${str}`);
+  it('Handling the Warning Alert', () => {
+    cy.on('window:alert', (str) => {
+      console.log(`My warning alert text content is: ${str}`)
 
-      expect(str).to.equal("You are on TechGlobal Training application.");
-    });
+      expect(str).to.equal('You are on TechGlobal Training application.')
+    })
 
-    cy.get("#warning_alert").click();
-  });
+    cy.get('#warning_alert').click()
+  })
 
-  it("Handling the Confirmation Alert", () => {
-    cy.get("#confirmation_alert").click();
+  it('Handling the Confirmation Alert', () => {
+    cy.get('#confirmation_alert').click()
 
-    cy.on("window:confirm", (str) => {
-      console.log(`My confirmation alert text content is: ${str}`);
+    cy.on('window:confirm', (str) => {
+      console.log(`My confirmation alert text content is: ${str}`)
       expect(str).to.equal(
-        "Would you like to stay on TechGlobal Training application?"
-      );
-      return false;
-    });
+        'Would you like to stay on TechGlobal Training application?'
+      )
+      return false
+    })
 
-    cy.get("#action").should(
-      "have.text",
-      "You rejected the alert by clicking Cancel."
-    );
-  });
+    cy.get('#action').should(
+      'have.text',
+      'You rejected the alert by clicking Cancel.'
+    )
+  })
 
-  it("Handling Prompt Alert", () => {
+  it('Handling Prompt Alert', () => {
     // Clicks cancel for the prompt
     // cy.window().then((win) => {
     //   // Now this below is the window object itself
@@ -67,15 +67,15 @@ describe("Handling Alerts", () => {
     // });
 
     cy.window().then((win) => {
-      cy.stub(win, "prompt").callsFake((message) => {
+      cy.stub(win, 'prompt').callsFake((message) => {
         console.log(message)
         expect(message).to.equal('What would you like to say to TechGlobal?')
 
         return 'My Message'
       })
-    });
+    })
 
 
-    cy.get("#prompt_alert").click();
-  });
-});
+    cy.get('#prompt_alert').click()
+  })
+})

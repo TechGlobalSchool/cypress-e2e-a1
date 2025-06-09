@@ -9,12 +9,12 @@ describe('Timeouts', () => {
 
     cy.get('#hello_paragraph', { timeout: 5000 }).click({ timeout: 10 * 1000 })
 
-    cy.get("#checkbox-button-group input").click({ 
+    cy.get('#checkbox-button-group input').click({ 
       multiple: true,
       timeout: 5000,
       force: true, 
       log: true 
-    });
+    })
 
     // npx cypress run --config defaultCommandTimeout=10000
   })

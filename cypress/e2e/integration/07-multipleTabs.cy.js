@@ -1,19 +1,19 @@
-describe("Handling Multi tab/windows", () => {
+describe('Handling Multi tab/windows', () => {
   beforeEach(() => {
-    cy.clickCard("Multiple Windows");
-  });
+    cy.clickCard('Multiple Windows')
+  })
 
-  it("Tabs", () => {
-    cy.get("#microsoft").should("have.attr", "target", "_blank");
+  it('Tabs', () => {
+    cy.get('#microsoft').should('have.attr', 'target', '_blank')
 
-    cy.get("#microsoft").invoke("removeAttr", "target").click();
+    cy.get('#microsoft').invoke('removeAttr', 'target').click()
 
     cy.on('uncaught:exception', () => {
       return false
     })
 
-    cy.url().should("contain", "microsoft");
-  });
+    cy.url().should('contain', 'microsoft')
+  })
 
   /**
    * Go to https://techglobal-training.com/frontend/
@@ -25,13 +25,13 @@ describe("Handling Multi tab/windows", () => {
    */
 
   it('Test Case', () => {
-   cy.get('#apple').invoke('removeAttr', 'target').click();
-   cy.title().should('contain', 'Apple');
+    cy.get('#apple').invoke('removeAttr', 'target').click()
+    cy.title().should('contain', 'Apple')
 
-   cy.go(-1);
+    cy.go(-1)
 
-   cy.title().then((title) => {
-    cy.wrap(title.toLowerCase()).should('contain', 'techglobal')
-   })
+    cy.title().then((title) => {
+      cy.wrap(title.toLowerCase()).should('contain', 'techglobal')
+    })
   })
-});
+})

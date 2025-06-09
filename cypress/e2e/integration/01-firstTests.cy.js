@@ -1,22 +1,22 @@
 /// <reference types="cypress"/>
 
 // This is describe() test block that holds group of tests
-describe("My First Tests", () => {
+describe('My First Tests', () => {
 
   // This is the test block "it()" that holds individual test
-  it("Test 1", () => {
-    cy.log("TechGlobal");
-  });
+  it('Test 1', () => {
+    cy.log('TechGlobal')
+  })
 
-  it("Test 2", () => {
-    cy.log("TechGlobal 2");
-  });
+  it('Test 2', () => {
+    cy.log('TechGlobal 2')
+  })
 
-  it("Test 3", () => {
-    cy.log("TechGlobal 3");
-  });
+  it('Test 3', () => {
+    cy.log('TechGlobal 3')
+  })
 
-  it("Visit TechGlobal training app homepage", () => {
+  it('Visit TechGlobal training app homepage', () => {
     cy.visit('https://techglobal-training.com/')
 
     // Command to refresh your current url
@@ -35,7 +35,7 @@ describe("My First Tests", () => {
     cy.title().should('eq', 'TechGlobal Training | Home')
 
     cy.url().should('contain', 'https://www.techglobal-training.com')
-  });
+  })
 
   it('My First Test', () => {
     // expect(true).to.eq(false)
@@ -45,6 +45,6 @@ describe("My First Tests", () => {
     // cy.get('#logo').click()
     // cy.get('#logo').should('be.visible')
 
-     cy.get('#logo').click().should('be.visible')
+    cy.get('#logo').click().should('be.visible')
   })
-});
+})

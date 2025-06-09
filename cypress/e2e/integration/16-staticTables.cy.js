@@ -1,4 +1,4 @@
-import TablesPage from "../../pages/TablesPage"
+import TablesPage from '../../pages/TablesPage'
 
 describe('Static Tables', { tags: '@regression' }, () => {
 

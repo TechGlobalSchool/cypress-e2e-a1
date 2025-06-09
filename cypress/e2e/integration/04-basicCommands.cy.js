@@ -1,9 +1,9 @@
 /// <reference types="cypress"/>
 
-describe("Basic Commands", () => {
+describe('Basic Commands', () => {
   beforeEach(() => {
-    cy.contains(".card", "HTML Elements").click();
-  });
+    cy.contains('.card', 'HTML Elements').click()
+  })
 
   /**
    * Visit the techglobal frontend page
@@ -13,12 +13,12 @@ describe("Basic Commands", () => {
    * And click on the "Sign in" button
    * Validate "You clicked on “Sign in”" text is visible
    */
-  it("Click Action", () => {
-    cy.get("#register_button").click();
-    cy.get(".mt-1.is-block").should("have.text", "You clicked on “Register”");
+  it('Click Action', () => {
+    cy.get('#register_button').click()
+    cy.get('.mt-1.is-block').should('have.text', 'You clicked on “Register”')
 
-    cy.get("#signin_button").click();
-    cy.get(".mt-1.is-block").should("have.text", "You clicked on “Sign in”");
+    cy.get('#signin_button').click()
+    cy.get('.mt-1.is-block').should('have.text', 'You clicked on “Sign in”')
 
     // cy.title().should('eq', 'TechGlobal Training | HTML Elements')
 
@@ -36,9 +36,9 @@ describe("Basic Commands", () => {
     // })
 
     // cy.get('.mt-1.is-block').should('have.property')
-  });
+  })
 
-  it("Checkbox & Radio Buttons", () => {
+  it('Checkbox & Radio Buttons', () => {
     // .check()
     // This assertion will not work, beacuse '#apple_check' targets <label> web element
     // and this element is not the input itself, it is not possible to get input informaation from it
@@ -57,11 +57,11 @@ describe("Basic Commands", () => {
      * 4. Validate its unchecked
      */
 
-    cy.get("#checkbox_1")
+    cy.get('#checkbox_1')
       .check()
-      .should("be.checked")
+      .should('be.checked')
       .uncheck()
-      .should("not.be.checked");
+      .should('not.be.checked')
 
     /**
      * 1. Locate the "Java" radio button, and validate its not checked
@@ -69,10 +69,10 @@ describe("Basic Commands", () => {
      * 3. Validate its checked.
      */
 
-    cy.get("#radio_1_option_1")
-      .should("not.be.checked")
+    cy.get('#radio_1_option_1')
+      .should('not.be.checked')
       .check()
-      .should("be.checked");
+      .should('be.checked')
 
     /**
      * Target all 3 checkbox input boxes
@@ -80,12 +80,12 @@ describe("Basic Commands", () => {
 
     // cy.get("#checkbox-button-group input").click({ multiple: true });
 
-    cy.get("#checkbox-button-group input").each(($el) => {
-      cy.wrap($el).check();
-    });
-  });
+    cy.get('#checkbox-button-group input').each(($el) => {
+      cy.wrap($el).check()
+    })
+  })
 
-  it("Text Input", () => {
+  it('Text Input', () => {
     // .type('TechGlobal')
     // .clear()
 
@@ -104,28 +104,28 @@ describe("Basic Commands", () => {
 
     cy.get('[data-identifier="Text Inputs"] input').each(($el, index) => {
       cy.wrap($el)
-      .type(inputs[index])
-      .should("have.value", inputs[index])
-      .clear()
-      .should("be.empty");
+        .type(inputs[index])
+        .should('have.value', inputs[index])
+        .clear()
+        .should('be.empty')
     })
 
     // cy.get("#text_input1").type(first).should("have.value", first)
     // .clear().should('be.empty').next().children('div').children()
     // .type(last).should("have.value", last).clear().should("be.empty");
 
-    cy.get("#text_input1")
+    cy.get('#text_input1')
       .type(first)
-      .should("have.value", first)
+      .should('have.value', first)
       .clear()
-      .should("be.empty");
+      .should('be.empty')
 
-    cy.get("#text_input2")
+    cy.get('#text_input2')
       .type(last)
-      .should("have.value", last)
+      .should('have.value', last)
       .clear()
-      .should("be.empty");
-  });
+      .should('be.empty')
+  })
 
   it('Date Inputs', () => {
 
@@ -156,4 +156,4 @@ describe("Basic Commands", () => {
 
     cy.contains('[role="option"]', 'Pick up').click()
   })
-});
+})

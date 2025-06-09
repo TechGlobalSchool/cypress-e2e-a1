@@ -14,25 +14,25 @@
 //
 
 Cypress.Commands.add('clickCard', (link) => { 
-  cy.contains(".card, [class*='projectCard']", link).click();
- })
+  cy.contains('.card, [class*=\'projectCard\']', link).click()
+})
 
- Cypress.Commands.add('selectDropdown', (locator, option) => {
+Cypress.Commands.add('selectDropdown', (locator, option) => {
   cy.get(locator).select(option)
- })
+})
 
- /**
+/**
   * Create a Cypress Custom Function called 'focusLogin'
   * 
   * This function will get 2 arguments (email, name) 
   * 
   * It will enter the user email and first name on Focus section and click on the submit button
   */
- Cypress.Commands.add('focusLogin', (email, name) => {
+Cypress.Commands.add('focusLogin', (email, name) => {
   cy.get('[name="email"]').type(email)
   cy.get('.mb-3 > input').clear().type(name)
   cy.get('.mb-3 + button').click()
- })
+})
 
 
 /**
